@@ -6,3 +6,6 @@
 - yarn install
 - yarn start
 
+## Build Status
+
+[![Build Status](https://travis-ci.org/torestensrud/supershop.svg?branch=master)](https://travis-ci.org/torestensrud/supershop)
