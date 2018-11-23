@@ -1,7 +1,18 @@
 {
-  "name": "sandbox",
+<<<<<<< HEAD
+  "name": "supershop",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "description": "Super shop sandbox",
+  "license": "ISC",
+  "homepage": "https://github.com/torestensrud/supershop#readme",
+  "bugs": {
+    "url": "https://github.com/torestensrud/supershop/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/torestensrud/supershop.git"
+  },
   "dependencies": {
     "@types/jest": "^23.3.9",
     "@types/node": "^10.12.9",
