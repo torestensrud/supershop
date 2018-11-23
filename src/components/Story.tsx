@@ -1,32 +1,32 @@
 import React from 'react';
-import { ButtonInline } from './Button';
+import { Row, Col, Button } from 'antd';
 
 
 
-const Story = ({story, columns, onArchive}: any) => {
-    const {
-        title,
-        url,
-        author,
-        num_comments,
-        points,
-        objectID,
-    } = story;
+const Story = ({story, onArchive}: any) => {
+    const { objectID } = story;
 
-    return (
-        <div className="story">
-            <span style={{ width: columns.title.width }}>
-                <a href={url}>{title}</a>
-            </span>
-            <span style={{ width: columns.author.width }}>{author}</span>
-            <span style={{ width: columns.comments.width }}>{num_comments}</span>
-            <span style={{ width: columns.points.width }}>{points}</span>
-            <span style={{ width: columns.archive.width }}>
-                <ButtonInline onClick={ () => onArchive(objectID) }>
-                    Archive
-                </ButtonInline>
-            </span>
-        </div>
+    return ( 
+        <Row gutter={16}>
+            {Object.keys(story).map((key) => {
+                return (
+                    <Col className="gutter-row"
+                        span={3}
+                        key={key} >
+                            {story[key]}
+                    </Col>
+                )}
+            )}
+
+            <Col span={3}>
+                <Button 
+                    type="primary"
+                    onClick={ () => onArchive(objectID)}>
+                        Archive
+                </Button>
+            </Col>
+
+        </Row>
     );
 }
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Row, Col } from 'antd';
 import Story from './Story';
 
 interface Columns{
@@ -7,56 +8,38 @@ interface Columns{
     };
 }
 
-const COLUMNS: Columns = {
-    title: {
-        label: 'title1',
-        width: '40%',
-    },
-    author: {
-        label: 'title2',
-        width: '30%',
-    },
-    comments: {
-        label: 'title3',
-        width: '10%',
-    },
-    points: {
-        label: 'title4',
-        width: '10%',
-    },
-    archive: {
-        label: 'title5',
-        width: '10%',
-    },
-};
-
 const Stories: any = ({stories, onArchive}: any) => {
     return (
         <div className="stories">
-        <StoriesHeader columns={COLUMNS} />
+
+        <StoriesHeader stories={stories}/>
+
         {(stories || []).map((story: any) => 
             <Story
                 key={story.objectID}
                 story={story}  
-                columns={COLUMNS}
                 onArchive={onArchive}
             /> 
         )}
     </div> )
 };
 
-const StoriesHeader: any = ({columns}: any) :any => {
+const StoriesHeader: any = ({stories}: any) :any => {
     return (
-        <div className="stories-header">
-        {Object.keys(COLUMNS).map((key) =>
-            <span
-                key={key} 
-                style={{ width: COLUMNS[key].width}}    
-            >
-                {COLUMNS[key].label}
-            </span>
-        )}
-        </div>
+        <Row gutter={16}>
+            {Object.keys(stories[0]).map((key) =>
+                <Col className="gutter-row"
+                    span={3}
+                    key={key} >
+                    <div className="gutter-box">{key}</div>
+                </Col>
+            )}
+            <Col className="gutter-row"
+                span={3} >
+                <div className="gutter-box">Archive</div>
+            </Col>
+        </Row>
+        
     );
 }
 

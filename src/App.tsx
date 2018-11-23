@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Stories from './components/Stories';
 import store from './stores';
-import './App.css';
+import "antd/dist/antd.css";
 
 class App extends Component {
   onArchive(){
