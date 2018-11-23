@@ -33,7 +33,6 @@
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
-    "test": "",
     "eject": "react-app-rewired eject"
   },
   "eslintConfig": {
